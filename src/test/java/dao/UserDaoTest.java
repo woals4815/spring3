@@ -26,6 +26,8 @@ class UserDaoTest {
 
     @Test
     void addAndGet() throws SQLException {
+        userDao.deleteAll();
+        assertEquals(0, userDao.getCount());
         User user = new User();
         user.setId("test");
         user.setName("test");
@@ -33,6 +35,9 @@ class UserDaoTest {
         userDao.add(user);
         User findUser = userDao.get(user.getId());
         assertEquals(user.getName(), findUser.getName());
+        assertEquals(1, userDao.getCount());
     }
+
+
 
 }
