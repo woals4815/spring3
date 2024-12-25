@@ -9,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.dao.EmptyResultDataAccessException;
 
 import java.sql.SQLException;
 
@@ -28,14 +29,20 @@ class UserDaoTest {
     void addAndGet() throws SQLException {
         userDao.deleteAll();
         assertEquals(0, userDao.getCount());
-        User user = new User();
-        user.setId("test");
-        user.setName("test");
-        user.setPassword("test");
+        User user = new User("test", "test", "test");
         userDao.add(user);
+
         User findUser = userDao.get(user.getId());
         assertEquals(user.getName(), findUser.getName());
         assertEquals(1, userDao.getCount());
+    }
+
+    @Test
+    void emptyResult()  throws SQLException {
+
+        assertThrows(EmptyResultDataAccessException.class, () -> {
+            userDao.get("noId");
+        });
     }
 
 
