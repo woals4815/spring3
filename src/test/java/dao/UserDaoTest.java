@@ -28,15 +28,12 @@ import java.sql.SQLException;
 @ContextConfiguration(locations = "/applicationContext.xml")
 class UserDaoTest {
     private static final Log log = LogFactory.getLog(UserDaoTest.class);
+    @Autowired
     private UserDao userDao;
     //todo: what is Autowired??
-    @Autowired
-    private ApplicationContext context;
+    //Answer: autowired가 붙은 인스턴스 변수가 있으면 변수타입과 일치하는 컨테스트 내의 빈을 찾아서 주입해준다.
+    //그리고 ApplicationContext는 자기 자신도 빈으로 등록한다
 
-    @BeforeEach
-    void setUp() {
-        userDao = context.getBean("userDao", UserDao.class);
-    }
 
     @Test
     void addAndGet() throws SQLException {
