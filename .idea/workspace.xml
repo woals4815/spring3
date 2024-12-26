@@ -35,9 +35,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -65,6 +65,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.JUnitTest2.executor": "Run",
+    "Gradle.JunitTest.executor": "Run",
+    "Gradle.UserDaoTest.addAndGet.executor": "Run",
     "Gradle.UserDaoTest.executor": "Run",
     "Gradle.tobyspring3 [:dao.UserDaoTest.main()].executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -111,7 +114,7 @@
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UserDaoTest">
+  <component name="RunManager" selected="Gradle.UserDaoTest.addAndGet">
     <configuration name="UserDaoTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dao.UserDaoTest" />
       <module name="tobyspring3.main" />
@@ -124,6 +127,54 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="JUnitTest2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;junit.JUnitTest2&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="JunitTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;junit.JunitTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="UserDaoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -149,9 +200,36 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="UserDaoTest.addAndGet" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;dao.UserDaoTest.addAndGet&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UserDaoTest.addAndGet" />
         <item itemvalue="Gradle.UserDaoTest" />
+        <item itemvalue="Gradle.JunitTest" />
+        <item itemvalue="Gradle.JUnitTest2" />
         <item itemvalue="Application.UserDaoTest" />
       </list>
     </recent_temporary>
@@ -174,7 +252,7 @@
       <updated>1735019866168</updated>
       <workItem from="1735019867351" duration="267000" />
       <workItem from="1735020150918" duration="14526000" />
-      <workItem from="1735136615772" duration="7104000" />
+      <workItem from="1735136615772" duration="15114000" />
     </task>
     <servers />
   </component>
