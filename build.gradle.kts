@@ -15,6 +15,7 @@ dependencies {
     implementation("org.springframework:spring-jdbc:6.0.12")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.springframework:spring-test:6.0.12")
 }
 
 tasks.test {
