@@ -10,17 +10,19 @@ public class User {
     private String password;
     private int login;
     private int recommend;
+    private String email;
 
     //자바빈의 규약을 따르는 클래스에 생성자를 명시적으로 추가할 땐 기본 생성자도 함께 정의해줘야 함
     public User() {}
 
-    public User(String id, String name, String password, Level level, int login, int recommend) {
+    public User(String id, String name, String password, Level level, int login, int recommend, String email) {
         this.id = id;
         this.name = name;
         this.password = password;
         this.level = level;
         this.login = login;
         this.recommend = recommend;
+        this.email = email;
     }
 
     public Level getLevel() {
@@ -65,5 +67,11 @@ public class User {
         if (this.level.getNext() != null) {
             this.level = this.level.getNext();
         }
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

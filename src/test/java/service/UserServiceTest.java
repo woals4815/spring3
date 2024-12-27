@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -26,6 +27,8 @@ class UserServiceTest {
     private UserService userService;
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private MailSender mailSender;
 
     List<User> users;
 
@@ -34,13 +37,13 @@ class UserServiceTest {
         userDao.deleteAll();
         users = new ArrayList<User>();
         users.add(new User(
-                "jaemin", "jeongjaemin", "p1", Level.BASIC, 50, 0
+                "jaemin", "jeongjaemin", "p1", Level.BASIC, 50, 0, "email"
         ));
         users.add(new User(
-                "jaemin2", "jeongjaemin2", "p1", Level.BASIC, 50, 0
+                "jaemin2", "jeongjaemin2", "p1", Level.BASIC, 50, 0, "email"
         ));
         users.add(new User(
-                "jaemin3", "jeongjaemin3", "p1", Level.SILVER, 50, 59
+                "jaemin3", "jeongjaemin3", "p1", Level.SILVER, 50, 59, "email"
         ));
         for (User user : users) {
             userDao.add(user);

@@ -252,8 +252,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.UserServiceTest" />
-        <item itemvalue="Gradle.UserServiceTest.testUpgradeLevels" />
         <item itemvalue="Gradle.UserDaoJdbcTest" />
+        <item itemvalue="Gradle.UserServiceTest.testUpgradeLevels" />
         <item itemvalue="Gradle.UserDaoJdbcTest.addAndGet" />
         <item itemvalue="Gradle.UserDaoJdbcTest.updateTest" />
       </list>
@@ -277,7 +277,7 @@
       <updated>1735019866168</updated>
       <workItem from="1735019867351" duration="267000" />
       <workItem from="1735020150918" duration="14526000" />
-      <workItem from="1735136615772" duration="45267000" />
+      <workItem from="1735136615772" duration="49796000" />
     </task>
     <servers />
   </component>

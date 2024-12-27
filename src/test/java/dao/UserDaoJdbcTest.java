@@ -40,6 +40,10 @@ class UserDaoJdbcTest {
     @Autowired
     private UserDaoJdbc userDao;
 
+    User user = new User("test", "test", "test", Level.BASIC, 1, 0, "email");
+    User user2 = new User("test2", "test2", "test2", Level.BASIC, 1, 0, "email");
+    User user3 = new User("test3", "test3", "test3", Level.BASIC, 1, 0, "email");
+
     static private int num = 0;
     //todo: what is Autowired??
     //Answer: autowired가 붙은 인스턴스 변수가 있으면 변수타입과 일치하는 컨테스트 내의 빈을 찾아서 주입해준다.
@@ -62,8 +66,6 @@ class UserDaoJdbcTest {
     @Test
     void addAndGet() throws SQLException {
         userDaoJdbc.deleteAll();
-        User user = new User("test", "test", "test", Level.BASIC, 1, 0);
-
         userDaoJdbc.add(user);
 
         User findUser = userDaoJdbc.get(user.getId());
@@ -84,9 +86,7 @@ class UserDaoJdbcTest {
 
     @Test
     void getAllTest() throws SQLException {
-        User user = new User("test", "test", "test", Level.BASIC, 1, 0);
-        User user2 = new User("test2", "test2", "test2", Level.BASIC, 1, 0);
-        User user3 = new User("test3", "test3", "test3", Level.BASIC, 1, 0);
+
         userDaoJdbc.add(user);
         userDaoJdbc.add(user2);
         userDaoJdbc.add(user3);
@@ -112,7 +112,6 @@ class UserDaoJdbcTest {
 
     @Test
     void duplicateKey() {
-        User user = new User("test", "test", "test", Level.SILVER, 55, 10);
         userDaoJdbc.add(user);
         assertThrows(DuplicateKeyException.class, () -> {
             userDaoJdbc.add(user);
@@ -122,7 +121,6 @@ class UserDaoJdbcTest {
     }
     @Test
     void duplicateKey2() {
-        User user = new User("test", "test", "test", Level.GOLD, 100, 40);
         num += 1;
         System.out.println(num);
         try {
@@ -138,7 +136,6 @@ class UserDaoJdbcTest {
 
     @Test
     void updateTest() {
-        User user = new User("test", "test", "test", Level.GOLD, 100, 40);
         userDaoJdbc.add(user);
         user.setName("test2");
         userDao.update(user);
