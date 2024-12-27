@@ -86,4 +86,11 @@ class UserDaoTest {
     void getAllEmtpy() throws SQLException {
         assertEquals(0, userDao.getAll().size());
     }
+
+    @Test
+    void testGet() throws SQLException {
+        assertThrows(EmptyResultDataAccessException.class, () -> {
+            userDao.get("test");
+        });
+    }
 }
