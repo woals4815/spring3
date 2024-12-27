@@ -9,10 +9,19 @@
         <property name="username" value="root" />
         <property name="password" value="woals4815" />
     </bean>
+    <bean id="PlatformTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
     <bean id="userDao" class="dao.UserDaoJdbc">
         <property name="dataSource" ref="dataSource" />
     </bean>
+    <bean id="levelPolicy" class="service.EventLevelPolicy">
+        <property name="userDao" ref="userDao" />
+    </bean>
     <bean id="userService" class="service.UserService">
         <property name="userDao" ref="userDao" />
+        <property name="levelPolicy" ref="levelPolicy" />
+        <property name="dataSource" ref="dataSource" />
+        <property name="transactionManager" ref="PlatformTransactionManager" />
     </bean>
 </beans>

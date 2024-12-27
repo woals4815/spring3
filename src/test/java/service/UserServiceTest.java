@@ -46,10 +46,6 @@ class UserServiceTest {
             userDao.add(user);
         }
     }
-    @AfterEach
-    void tearDown() {
-        userDao.deleteAll();
-    }
 
     @Test
     public void bean() {
@@ -57,7 +53,7 @@ class UserServiceTest {
     }
 
     @Test
-    public void testUpgradeLevels() {
+    public void testUpgradeLevels() throws Exception {
         userService.updateLevels();
         List<User> users = userDao.getAll();
         User user = users.get(0);
