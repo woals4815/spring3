@@ -35,9 +35,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -65,6 +65,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.CalcSumTest.executor": "Run",
     "Gradle.JUnitTest2.executor": "Run",
     "Gradle.JunitTest.executor": "Run",
     "Gradle.UserDaoTest.addAndGet.executor": "Run",
@@ -111,22 +112,34 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="example" />
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UserDaoTest.addAndGet">
-    <configuration name="UserDaoTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dao.UserDaoTest" />
-      <module name="tobyspring3.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Gradle.UserDaoTest">
+    <configuration name="CalcSumTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;example.CalcSumTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="JUnitTest2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -226,11 +239,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.UserDaoTest.addAndGet" />
         <item itemvalue="Gradle.UserDaoTest" />
+        <item itemvalue="Gradle.CalcSumTest" />
+        <item itemvalue="Gradle.UserDaoTest.addAndGet" />
         <item itemvalue="Gradle.JunitTest" />
         <item itemvalue="Gradle.JUnitTest2" />
-        <item itemvalue="Application.UserDaoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +265,7 @@
       <updated>1735019866168</updated>
       <workItem from="1735019867351" duration="267000" />
       <workItem from="1735020150918" duration="14526000" />
-      <workItem from="1735136615772" duration="16107000" />
+      <workItem from="1735136615772" duration="25243000" />
     </task>
     <servers />
   </component>
