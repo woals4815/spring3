@@ -11,8 +11,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
+import org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator;
+import org.springframework.jdbc.support.SQLExceptionTranslator;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -31,6 +35,12 @@ class UserDaoJdbcTest {
     private static final Log log = LogFactory.getLog(UserDaoJdbcTest.class);
     @Autowired
     private UserDaoJdbc userDaoJdbc;
+    @Autowired
+    private DataSource dataSource;
+    @Autowired
+    private UserDaoJdbc userDao;
+
+    static private int num = 0;
     //todo: what is Autowired??
     //Answer: autowired가 붙은 인스턴스 변수가 있으면 변수타입과 일치하는 컨테스트 내의 빈을 찾아서 주입해준다.
     //그리고 ApplicationContext는 자기 자신도 빈으로 등록한다
@@ -52,13 +62,15 @@ class UserDaoJdbcTest {
     @Test
     void addAndGet() throws SQLException {
         userDaoJdbc.deleteAll();
-        User user = new User("test", "test", "test");
+        User user = new User("test", "test", "test", Level.BASIC, 1, 0);
 
         userDaoJdbc.add(user);
 
         User findUser = userDaoJdbc.get(user.getId());
         assertEquals(user.getName(), findUser.getName());
         assertEquals(1, userDaoJdbc.getCount());
+        num += 1;
+        System.out.println(num);
     }
 
     @Test
@@ -66,21 +78,27 @@ class UserDaoJdbcTest {
         assertThrows(EmptyResultDataAccessException.class, () -> {
             userDaoJdbc.get("noId");
         });
+        num += 1;
+        System.out.println(num);
     }
 
     @Test
     void getAllTest() throws SQLException {
-        User user = new User("test", "test", "test");
-        User user2 = new User("test2", "test2", "test2");
-        User user3 = new User("test3", "test3", "test3");
+        User user = new User("test", "test", "test", Level.BASIC, 1, 0);
+        User user2 = new User("test2", "test2", "test2", Level.BASIC, 1, 0);
+        User user3 = new User("test3", "test3", "test3", Level.BASIC, 1, 0);
         userDaoJdbc.add(user);
         userDaoJdbc.add(user2);
         userDaoJdbc.add(user3);
         assertEquals(3, userDaoJdbc.getAll().size());
+        num += 1;
+        System.out.println(num);
     }
     @Test
     void getAllEmtpy() throws SQLException {
         assertEquals(0, userDaoJdbc.getAll().size());
+        num += 1;
+        System.out.println(num);
     }
 
     @Test
@@ -88,5 +106,46 @@ class UserDaoJdbcTest {
         assertThrows(EmptyResultDataAccessException.class, () -> {
             userDaoJdbc.get("test");
         });
+        num += 1;
+        System.out.println(num);
+    }
+
+    @Test
+    void duplicateKey() {
+        User user = new User("test", "test", "test", Level.SILVER, 55, 10);
+        userDaoJdbc.add(user);
+        assertThrows(DuplicateKeyException.class, () -> {
+            userDaoJdbc.add(user);
+        });
+        num += 1;
+        System.out.println(num);
+    }
+    @Test
+    void duplicateKey2() {
+        User user = new User("test", "test", "test", Level.GOLD, 100, 40);
+        num += 1;
+        System.out.println(num);
+        try {
+            userDaoJdbc.add(user);
+            userDaoJdbc.add(user);
+        } catch (DuplicateKeyException ex) {
+
+            SQLException sqlEx = (SQLException) ex.getRootCause();
+            SQLExceptionTranslator set = new SQLErrorCodeSQLExceptionTranslator(this.dataSource);
+            assertTrue(set.translate(null, null, sqlEx) instanceof DuplicateKeyException);
+        }
+    }
+
+    @Test
+    void updateTest() {
+        User user = new User("test", "test", "test", Level.GOLD, 100, 40);
+        userDaoJdbc.add(user);
+        user.setName("test2");
+        userDao.update(user);
+
+        User userget = userDaoJdbc.get(user.getId());
+        assertEquals("test2", userget.getName());
+        num += 1;
+        System.out.println(num);
     }
 }

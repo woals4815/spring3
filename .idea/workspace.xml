@@ -18,6 +18,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -35,9 +38,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -68,8 +72,15 @@
     "Gradle.CalcSumTest.executor": "Run",
     "Gradle.JUnitTest2.executor": "Run",
     "Gradle.JunitTest.executor": "Run",
+    "Gradle.UserDaoJdbcTest.addAndGet.executor": "Run",
+    "Gradle.UserDaoJdbcTest.duplicateKey.executor": "Run",
+    "Gradle.UserDaoJdbcTest.duplicateKey2.executor": "Run",
+    "Gradle.UserDaoJdbcTest.executor": "Run",
+    "Gradle.UserDaoJdbcTest.updateTest.executor": "Run",
     "Gradle.UserDaoTest.addAndGet.executor": "Run",
     "Gradle.UserDaoTest.executor": "Run",
+    "Gradle.UserServiceTest.executor": "Run",
+    "Gradle.UserServiceTest.testUpgradeLevels.executor": "Run",
     "Gradle.tobyspring3 [:dao.UserDaoTest.main()].executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -112,12 +123,13 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="service" />
       <recent name="example" />
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UserDaoTest">
-    <configuration name="CalcSumTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.UserServiceTest">
+    <configuration name="UserDaoJdbcTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -130,7 +142,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;example.CalcSumTest&quot;" />
+            <option value="&quot;dao.UserDaoJdbcTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -141,7 +153,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="JUnitTest2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserDaoJdbcTest.addAndGet" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -154,7 +166,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;junit.JUnitTest2&quot;" />
+            <option value="&quot;dao.UserDaoJdbcTest.addAndGet&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -165,7 +177,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="JunitTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserDaoJdbcTest.updateTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -178,7 +190,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;junit.JunitTest&quot;" />
+            <option value="&quot;dao.UserDaoJdbcTest.updateTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -189,7 +201,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UserDaoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -202,7 +214,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;dao.UserDaoTest&quot;" />
+            <option value="&quot;service.UserServiceTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -213,7 +225,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UserDaoTest.addAndGet" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserServiceTest.testUpgradeLevels" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -226,7 +238,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;dao.UserDaoTest.addAndGet&quot;" />
+            <option value="&quot;service.UserServiceTest.testUpgradeLevels&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -239,11 +251,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.UserDaoTest" />
-        <item itemvalue="Gradle.CalcSumTest" />
-        <item itemvalue="Gradle.UserDaoTest.addAndGet" />
-        <item itemvalue="Gradle.JunitTest" />
-        <item itemvalue="Gradle.JUnitTest2" />
+        <item itemvalue="Gradle.UserServiceTest" />
+        <item itemvalue="Gradle.UserServiceTest.testUpgradeLevels" />
+        <item itemvalue="Gradle.UserDaoJdbcTest" />
+        <item itemvalue="Gradle.UserDaoJdbcTest.addAndGet" />
+        <item itemvalue="Gradle.UserDaoJdbcTest.updateTest" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +277,7 @@
       <updated>1735019866168</updated>
       <workItem from="1735019867351" duration="267000" />
       <workItem from="1735020150918" duration="14526000" />
-      <workItem from="1735136615772" duration="29308000" />
+      <workItem from="1735136615772" duration="40235000" />
     </task>
     <servers />
   </component>

@@ -19,7 +19,7 @@ public class UserDaoJdbc implements UserDao {
     private RowMapper<User> rowMapper = new RowMapper<User>() {
         @Override
         public User mapRow(ResultSet rs, int rowNum) throws SQLException {
-            return new User(rs.getString("id"), rs.getString("name"), rs.getString("password"));
+            return new User(rs.getString("id"), rs.getString("name"), rs.getString("password"), Level.valueOf(rs.getInt("level")), rs.getInt("login"), rs.getInt("recommend"));
         }
     };
 
@@ -32,7 +32,7 @@ public class UserDaoJdbc implements UserDao {
     }
 
     public void add(User user) throws DuplicateUserIdException {
-            jdbcTemplate.update("insert into users values(?, ?, ?)", user.getId(), user.getName(), user.getPassword());
+            jdbcTemplate.update("insert into users(id, name, password, level, login, recommend) values(?, ?, ?, ?, ?, ?)", user.getId(), user.getName(), user.getPassword(), user.getLevel().getValue(), user.getLogin(), user.getRecommend());
     }
 
 
@@ -51,5 +51,10 @@ public class UserDaoJdbc implements UserDao {
     }
     public int getCount() {
         return jdbcTemplate.queryForObject("select count(*) from users", Integer.class);
+    }
+
+    @Override
+    public void update(User user) {
+        jdbcTemplate.update("update users set name=?, password=?, level=?, login=?, recommend=? where id =?", user.getName(), user.getPassword(), user.getLevel().getValue(), user.getLogin(), user.getRecommend(), user.getId());
     }
 }
