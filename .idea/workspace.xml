@@ -38,10 +38,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -277,7 +277,7 @@
       <updated>1735019866168</updated>
       <workItem from="1735019867351" duration="267000" />
       <workItem from="1735020150918" duration="14526000" />
-      <workItem from="1735136615772" duration="40235000" />
+      <workItem from="1735136615772" duration="40638000" />
     </task>
     <servers />
   </component>
