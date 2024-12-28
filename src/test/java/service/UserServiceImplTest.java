@@ -3,8 +3,6 @@ package service;
 import dao.Level;
 import dao.UserDao;
 import domain.User;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,17 +12,15 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = "/testApplicationContext.xml")
-class UserServiceTest {
+class UserServiceImplTest {
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userServiceImpl;
     @Autowired
     private UserDao userDao;
     @Autowired
@@ -52,12 +48,12 @@ class UserServiceTest {
 
     @Test
     public void bean() {
-        assertNotNull(userService);
+        assertNotNull(userServiceImpl);
     }
 
     @Test
     public void testUpgradeLevels() throws Exception {
-        userService.updateLevels();
+        userServiceImpl.updateLevels();
         List<User> users = userDao.getAll();
         User user = users.get(0);
         assertEquals(user.getLevel(), Level.SILVER);
