@@ -25,9 +25,11 @@
         <property name="userDao" ref="userDao" />
         <property name="levelPolicy" ref="levelPolicy" />
     </bean>
-    <bean id="userService" class="service.UserServiceTx">
-        <property name="transactionManager" ref="PlatformTransactionManager" />
-        <property name="userService" ref="userServiceImpl" />
+    <bean id="userService" class="beanFactory.TxProxyFactoryBean">
+        <property name="target" ref="userServiceImpl" />
+        <property name="txManager" ref="PlatformTransactionManager" />
+        <property name="serviceInterface" value="service.UserService" />
+        <property name="pattern" value="updateLevels" />
     </bean>
     <bean id="message" class="beanFactory.MessageFactoryBean">
         <property name="text" value="Factory bean" />

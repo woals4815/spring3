@@ -1,6 +1,9 @@
 package proxy;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.aop.framework.ProxyFactoryBean;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
+import org.springframework.aop.support.NameMatchMethodPointcut;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -30,5 +33,31 @@ class HelloTargetTest {
                 )
         );
         assertEquals("HELLO JAEMIN", proxiedHello.sayHello("jaemin"));
+    }
+    @Test
+    public void proxyFactoryBean() {
+        ProxyFactoryBean factoryBean = new ProxyFactoryBean();
+        factoryBean.setTarget(new HelloTarget());
+        factoryBean.addAdvice(new UppercaseAdvice());
+        Hello proxiedHello = (Hello) factoryBean.getObject();
+
+        String result = proxiedHello.sayHello("jaemin");
+        assertEquals("HELLO JAEMIN", result);
+    }
+
+    @Test
+    public void pointCutTest() {
+        ProxyFactoryBean pf = new ProxyFactoryBean();
+        pf.setTarget(new HelloTarget());
+
+        NameMatchMethodPointcut pointcut = new NameMatchMethodPointcut();
+        pointcut.setMappedName("sayH*");
+
+        pf.addAdvisor(new DefaultPointcutAdvisor(pointcut, new UppercaseAdvice())); //advisor = pointcut(메소드 선정 알고리즘) + advice(부가기능)
+
+        Hello proxiedHello = (Hello) pf.getObject();
+
+        String result = proxiedHello.sayHello("jaemin");
+        assertEquals("HELLO JAEMIN", result);
     }
 }

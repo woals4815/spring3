@@ -40,8 +40,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,6 +72,8 @@
     "Gradle.CalcSumTest.executor": "Run",
     "Gradle.FactoryBeanTest.executor": "Run",
     "Gradle.HelloTargetTest.executor": "Run",
+    "Gradle.HelloTargetTest.pointCutTest.executor": "Run",
+    "Gradle.HelloTargetTest.proxyFactoryBean.executor": "Run",
     "Gradle.HelloTargetTest.simpleProxy3.executor": "Run",
     "Gradle.JUnitTest2.executor": "Run",
     "Gradle.JunitTest.executor": "Run",
@@ -136,7 +138,7 @@
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.FactoryBeanTest">
+  <component name="RunManager" selected="Gradle.HelloTargetTest.pointCutTest">
     <configuration name="FactoryBeanTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -161,7 +163,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="HelloTargetTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="HelloTargetTest.pointCutTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -174,7 +176,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;proxy.HelloTargetTest&quot;" />
+            <option value="&quot;proxy.HelloTargetTest.pointCutTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -185,7 +187,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="HelloTargetTest.simpleProxy3" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="HelloTargetTest.proxyFactoryBean" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -198,7 +200,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;proxy.HelloTargetTest.simpleProxy3&quot;" />
+            <option value="&quot;proxy.HelloTargetTest.proxyFactoryBean&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -259,11 +261,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.HelloTargetTest.pointCutTest" />
+        <item itemvalue="Gradle.HelloTargetTest.proxyFactoryBean" />
         <item itemvalue="Gradle.FactoryBeanTest" />
         <item itemvalue="Gradle.UserServiceImplTest.testUpgradeLevels" />
         <item itemvalue="Gradle.UserServiceImplTest.bean2" />
-        <item itemvalue="Gradle.HelloTargetTest.simpleProxy3" />
-        <item itemvalue="Gradle.HelloTargetTest" />
       </list>
     </recent_temporary>
   </component>
@@ -286,7 +288,7 @@
       <workItem from="1735019867351" duration="267000" />
       <workItem from="1735020150918" duration="14526000" />
       <workItem from="1735136615772" duration="57618000" />
-      <workItem from="1735440780962" duration="8291000" />
+      <workItem from="1735440780962" duration="16510000" />
     </task>
     <servers />
   </component>
