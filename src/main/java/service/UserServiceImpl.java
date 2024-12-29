@@ -19,7 +19,6 @@ public class UserServiceImpl implements UserService {
     private static final Log log = LogFactory.getLog(UserServiceImpl.class);
     private UserDao userDao;
     private UserLevelUpgradePolicy levelPolicy;
-    private DataSource dataSource;
     private PlatformTransactionManager transactionManager;
     private MailSender mailSender;
 
@@ -29,10 +28,6 @@ public class UserServiceImpl implements UserService {
 
     public void setTransactionManager(PlatformTransactionManager transactionManager) {
         this.transactionManager = transactionManager;
-    }
-
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
     }
 
     public void setUserDao(UserDao userDao) {

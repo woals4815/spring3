@@ -13,7 +13,6 @@ import java.util.List;
 
 public class UserDaoJdbc implements UserDao {
     private static final Log log = LogFactory.getLog(UserDaoJdbc.class);
-    private JdbcContext jdbcContext;
     private JdbcTemplate jdbcTemplate;
 
     private RowMapper<User> rowMapper = new RowMapper<User>() {
@@ -22,10 +21,6 @@ public class UserDaoJdbc implements UserDao {
             return new User(rs.getString("id"), rs.getString("name"), rs.getString("password"), Level.valueOf(rs.getInt("level")), rs.getInt("login"), rs.getInt("recommend"), rs.getString("email"));
         }
     };
-
-    public void setJdbcContext(JdbcContext jdbcContext) {
-        this.jdbcContext = jdbcContext;
-    }
 
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);

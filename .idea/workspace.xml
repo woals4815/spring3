@@ -81,7 +81,9 @@
     "Gradle.UserDaoJdbcTest.updateTest.executor": "Run",
     "Gradle.UserDaoTest.addAndGet.executor": "Run",
     "Gradle.UserDaoTest.executor": "Run",
+    "Gradle.UserServiceImplTest.bean2.executor": "Run",
     "Gradle.UserServiceImplTest.executor": "Run",
+    "Gradle.UserServiceImplTest.testUpgradeLevels.executor": "Run",
     "Gradle.UserServiceTest.executor": "Run",
     "Gradle.UserServiceTest.testUpgradeLevels.executor": "Run",
     "Gradle.tobyspring3 [:dao.UserDaoTest.main()].executor": "Run",
@@ -132,7 +134,7 @@
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.HelloTargetTest.simpleProxy3">
+  <component name="RunManager" selected="Gradle.UserServiceImplTest.testUpgradeLevels">
     <configuration name="HelloTargetTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -181,30 +183,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UserDaoJdbcTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;dao.UserDaoJdbcTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="UserServiceImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -229,7 +207,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UserServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserServiceImplTest.bean2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -242,7 +220,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;service.UserServiceTest&quot;" />
+            <option value="&quot;service.UserServiceImplTest.bean2&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserServiceImplTest.testUpgradeLevels" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;service.UserServiceImplTest.testUpgradeLevels&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -255,11 +257,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UserServiceImplTest.testUpgradeLevels" />
+        <item itemvalue="Gradle.UserServiceImplTest.bean2" />
         <item itemvalue="Gradle.HelloTargetTest.simpleProxy3" />
         <item itemvalue="Gradle.HelloTargetTest" />
         <item itemvalue="Gradle.UserServiceImplTest" />
-        <item itemvalue="Gradle.UserServiceTest" />
-        <item itemvalue="Gradle.UserDaoJdbcTest" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +284,7 @@
       <workItem from="1735019867351" duration="267000" />
       <workItem from="1735020150918" duration="14526000" />
       <workItem from="1735136615772" duration="57618000" />
-      <workItem from="1735440780962" duration="3775000" />
+      <workItem from="1735440780962" duration="5032000" />
     </task>
     <servers />
   </component>
