@@ -30,6 +30,7 @@ class UserServiceImplTest {
 
     @BeforeEach
     void setUp() {
+        
         userDao.deleteAll();
         users = new ArrayList<User>();
         users.add(new User(
