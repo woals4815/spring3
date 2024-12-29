@@ -29,4 +29,7 @@
         <property name="transactionManager" ref="PlatformTransactionManager" />
         <property name="userService" ref="userServiceImpl" />
     </bean>
+    <bean id="message" class="beanFactory.MessageFactoryBean">
+        <property name="text" value="Factory bean" />
+    </bean>
 </beans>

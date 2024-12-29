@@ -39,9 +39,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -70,6 +70,7 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.CalcSumTest.executor": "Run",
+    "Gradle.FactoryBeanTest.executor": "Run",
     "Gradle.HelloTargetTest.executor": "Run",
     "Gradle.HelloTargetTest.simpleProxy3.executor": "Run",
     "Gradle.JUnitTest2.executor": "Run",
@@ -128,13 +129,38 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="beanFactory" />
       <recent name="proxy" />
       <recent name="service" />
       <recent name="example" />
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UserServiceImplTest.testUpgradeLevels">
+  <component name="RunManager" selected="Gradle.FactoryBeanTest">
+    <configuration name="FactoryBeanTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;beanFactory.FactoryBeanTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="HelloTargetTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -173,30 +199,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;proxy.HelloTargetTest.simpleProxy3&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="UserServiceImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;service.UserServiceImplTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -257,11 +259,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.FactoryBeanTest" />
         <item itemvalue="Gradle.UserServiceImplTest.testUpgradeLevels" />
         <item itemvalue="Gradle.UserServiceImplTest.bean2" />
         <item itemvalue="Gradle.HelloTargetTest.simpleProxy3" />
         <item itemvalue="Gradle.HelloTargetTest" />
-        <item itemvalue="Gradle.UserServiceImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +286,7 @@
       <workItem from="1735019867351" duration="267000" />
       <workItem from="1735020150918" duration="14526000" />
       <workItem from="1735136615772" duration="57618000" />
-      <workItem from="1735440780962" duration="5032000" />
+      <workItem from="1735440780962" duration="8291000" />
     </task>
     <servers />
   </component>
