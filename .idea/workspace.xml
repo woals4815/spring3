@@ -140,7 +140,7 @@
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PointCutTest.classNamePointcutAdvisor">
+  <component name="RunManager" selected="Gradle.UserServiceImplTest.testUpgradeLevels">
     <configuration name="HelloTargetTest.pointCutTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -263,9 +263,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UserServiceImplTest.testUpgradeLevels" />
         <item itemvalue="Gradle.PointCutTest.classNamePointcutAdvisor" />
         <item itemvalue="Gradle.PointCutTest" />
-        <item itemvalue="Gradle.UserServiceImplTest.testUpgradeLevels" />
         <item itemvalue="Gradle.HelloTargetTest.pointCutTest" />
         <item itemvalue="Gradle.HelloTargetTest.proxyFactoryBean" />
       </list>
@@ -290,7 +290,7 @@
       <workItem from="1735019867351" duration="267000" />
       <workItem from="1735020150918" duration="14526000" />
       <workItem from="1735136615772" duration="57618000" />
-      <workItem from="1735440780962" duration="23130000" />
+      <workItem from="1735440780962" duration="24070000" />
     </task>
     <servers />
   </component>

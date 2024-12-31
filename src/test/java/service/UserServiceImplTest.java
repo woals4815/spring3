@@ -34,6 +34,8 @@ class UserServiceImplTest {
     private MailSender mailSender;
     @Autowired
     ApplicationContext context;
+    @Autowired
+    UserService userService;
 
     List<User> users;
     @Autowired
@@ -70,11 +72,6 @@ class UserServiceImplTest {
     @Test
     @DirtiesContext
     public void testUpgradeLevels() throws Exception {
-
-        ProxyFactoryBean proxyFactoryBean = context.getBean("&userService",ProxyFactoryBean.class);
-        proxyFactoryBean.setTarget(userServiceImpl);
-        UserService userService = (UserService) proxyFactoryBean.getObject();
-
         userService.updateLevels();
     }
 }
