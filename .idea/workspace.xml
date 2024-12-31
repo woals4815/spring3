@@ -77,6 +77,8 @@
     "Gradle.HelloTargetTest.simpleProxy3.executor": "Run",
     "Gradle.JUnitTest2.executor": "Run",
     "Gradle.JunitTest.executor": "Run",
+    "Gradle.PointCutTest.classNamePointcutAdvisor.executor": "Run",
+    "Gradle.PointCutTest.executor": "Run",
     "Gradle.UserDaoJdbcTest.addAndGet.executor": "Run",
     "Gradle.UserDaoJdbcTest.duplicateKey.executor": "Run",
     "Gradle.UserDaoJdbcTest.duplicateKey2.executor": "Run",
@@ -138,31 +140,7 @@
       <recent name="dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.HelloTargetTest.pointCutTest">
-    <configuration name="FactoryBeanTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;beanFactory.FactoryBeanTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.PointCutTest.classNamePointcutAdvisor">
     <configuration name="HelloTargetTest.pointCutTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -211,7 +189,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UserServiceImplTest.bean2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PointCutTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -224,7 +202,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;service.UserServiceImplTest.bean2&quot;" />
+            <option value="&quot;proxy.PointCutTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="PointCutTest.classNamePointcutAdvisor" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;proxy.PointCutTest.classNamePointcutAdvisor&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -261,11 +263,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PointCutTest.classNamePointcutAdvisor" />
+        <item itemvalue="Gradle.PointCutTest" />
+        <item itemvalue="Gradle.UserServiceImplTest.testUpgradeLevels" />
         <item itemvalue="Gradle.HelloTargetTest.pointCutTest" />
         <item itemvalue="Gradle.HelloTargetTest.proxyFactoryBean" />
-        <item itemvalue="Gradle.FactoryBeanTest" />
-        <item itemvalue="Gradle.UserServiceImplTest.testUpgradeLevels" />
-        <item itemvalue="Gradle.UserServiceImplTest.bean2" />
       </list>
     </recent_temporary>
   </component>
@@ -288,7 +290,7 @@
       <workItem from="1735019867351" duration="267000" />
       <workItem from="1735020150918" duration="14526000" />
       <workItem from="1735136615772" duration="57618000" />
-      <workItem from="1735440780962" duration="16510000" />
+      <workItem from="1735440780962" duration="22821000" />
     </task>
     <servers />
   </component>

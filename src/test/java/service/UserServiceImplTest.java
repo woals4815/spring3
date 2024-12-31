@@ -6,8 +6,11 @@ import domain.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.aop.framework.ProxyFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.mail.MailSender;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -29,6 +32,8 @@ class UserServiceImplTest {
     private UserDao userDao;
     @Autowired
     private MailSender mailSender;
+    @Autowired
+    ApplicationContext context;
 
     List<User> users;
     @Autowired
@@ -63,20 +68,13 @@ class UserServiceImplTest {
     }
 
     @Test
+    @DirtiesContext
     public void testUpgradeLevels() throws Exception {
-        TransactionHandler txHandler = new TransactionHandler();
-        txHandler.setPattern("updateLevels");
-        //여기서 new UserServiceImpl은 빈 주입을 자동적으로 해주지 않기 때문에 위에 AutoWired로 된 userServiceImpl을 사용해야 한다
-        txHandler.setTarget(userServiceImpl);
-        txHandler.setTransactionManager(transactionManager);
 
-        UserService proxiedUserService = (UserService) Proxy.newProxyInstance(
-                getClass().getClassLoader(),
-                new Class[]{
-                        UserService.class
-                },
-                txHandler
-        );
-        proxiedUserService.updateLevels();
+        ProxyFactoryBean proxyFactoryBean = context.getBean("&userService",ProxyFactoryBean.class);
+        proxyFactoryBean.setTarget(userServiceImpl);
+        UserService userService = (UserService) proxyFactoryBean.getObject();
+
+        userService.updateLevels();
     }
 }

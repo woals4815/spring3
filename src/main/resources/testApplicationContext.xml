@@ -25,13 +25,25 @@
         <property name="userDao" ref="userDao" />
         <property name="levelPolicy" ref="levelPolicy" />
     </bean>
-    <bean id="userService" class="beanFactory.TxProxyFactoryBean">
+    <bean id="userService" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target" ref="userServiceImpl" />
-        <property name="txManager" ref="PlatformTransactionManager" />
-        <property name="serviceInterface" value="service.UserService" />
-        <property name="pattern" value="updateLevels" />
+        <property name="interceptorNames">
+            <list>
+                <value>transactionAdvisor</value>
+            </list>
+        </property>
     </bean>
     <bean id="message" class="beanFactory.MessageFactoryBean">
         <property name="text" value="Factory bean" />
+    </bean>
+    <bean id="transactionAdivce" class="proxy.TransactionAdvice">
+        <property name="transactionManager" ref="PlatformTransactionManager" />
+    </bean>
+    <bean id="transactionPointcut" class="org.springframework.aop.support.NameMatchMethodPointcut">
+        <property name="mappedName" value="update*" />
+    </bean>
+    <bean id="transactionAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+        <property name="advice" ref="transactionAdivce" />
+        <property name="pointcut" ref="transactionPointcut" />
     </bean>
 </beans>
