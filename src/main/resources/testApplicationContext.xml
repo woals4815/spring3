@@ -39,11 +39,13 @@
     <bean id="transactionAdivce" class="proxy.TransactionAdvice">
         <property name="transactionManager" ref="PlatformTransactionManager" />
     </bean>
-    <bean id="transactionPointcut" class="org.springframework.aop.support.NameMatchMethodPointcut">
-        <property name="mappedName" value="update*" />
+    <bean id="transactionPointcut" class="proxy.NameMatchClassMethodPointcut">
+        <property name="mappedClassName" value="*ServiceImpl" />
+        <property name="mappedName" value="update" />
     </bean>
     <bean id="transactionAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
         <property name="advice" ref="transactionAdivce" />
         <property name="pointcut" ref="transactionPointcut" />
     </bean>
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" />
 </beans>
